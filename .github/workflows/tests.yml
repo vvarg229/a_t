@@ -31,6 +31,14 @@ jobs:
         with:
           python-version: '3.11.6'
 
+      - name: Run tests and store allure result
+        env:
+          ALLURE_RESULTS_DIR: ${GITHUB_WORKSPACE}/test_delete_metadata
+        run: |
+          ls -lah .
+          echo "ALLURE_RESULTS_DIR"
+          ls -lah "$ALLURE_RESULTS_DIR"
+
       - uses: actions/checkout@v4
       - name: Publish Allure report to Morph object storage
         id: publish_to_morph_object_storage
