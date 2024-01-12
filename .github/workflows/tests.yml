@@ -18,8 +18,6 @@ on:
 
 permissions: write-all
 
-env:
-  ALLURE_RESULTS_DIR: ${GITHUB_WORKSPACE}/test_delete_metadata
 
 jobs:
   a_r:
@@ -41,7 +39,7 @@ jobs:
           MORPH_USER_NAME: ${{ secrets.MORPH_USER_NAME }}
           MORPH_USER_PASSWORD: ${{ secrets.MORPH_USER_PASSWORD }}
           ALLURE_REPORT_BUCKET_NAME: ${{ vars.ALLURE_REPORT_BUCKET_NAME }}
-          ALLURE_RESULTS_DIR: ${{ env.ALLURE_RESULTS_DIR }}
+          ALLURE_RESULTS_DIR: ${GITHUB_WORKSPACE}/test_delete_metadata
 
       - name: Post a link to the Allure report stored in the Morph object repository
         id: post_report_link
