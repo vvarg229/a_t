@@ -39,7 +39,6 @@ jobs:
           echo "ALLURE_RESULTS_DIR"
           ls -lah "$ALLURE_RESULTS_DIR"
 
-      - uses: actions/checkout@v4
       - name: Publish Allure report to Morph object storage
         id: publish_to_morph_object_storage
         uses: morphbits-io/gh-push-to-morph@main
