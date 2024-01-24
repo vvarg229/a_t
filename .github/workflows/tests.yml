@@ -64,7 +64,7 @@ jobs:
       - name: Post a link to the Allure report stored in the Morph object repository
         id: post_report_link
         timeout-minutes: 60
-        if: always() && steps.publish_to_morph_object_storage.outcome == 'success'
+        if: always()
         env:
           ALLURE_REPORT_URL: ${{ steps.publish_to_morph_object_storage.outputs.ALLURE_REPORT_URL }}
         uses: Sibz/github-status-action@v1
